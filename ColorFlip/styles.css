@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#background {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s;
+}
+
+.btn {
+  border: none;
+  margin: 0;
+  padding: 1rem;
+  width: auto;
+  overflow: visible;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  cursor: pointer;
+  font-size: 1rem;
+  filter: drop-shadow(0 0 0.75rem crimson);
+}
+
+.btn:hover {
+  color: white;
+  background-color: black;
+}
