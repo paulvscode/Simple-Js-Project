@@ -38,3 +38,12 @@
 .plus:hover {
   background-color: rgb(191, 252, 142);
 }
+
+.reset-counter {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.reset-counter:hover {
+  color: rgb(105, 136, 240);
+}
