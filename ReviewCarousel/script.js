@@ -25,7 +25,7 @@ const reviews = [
   },
 ];
 
-let slideCounter = 0;
+let slideCounter = 1;
 
 const picture = document.querySelector(".picture");
 const personName = document.querySelector(".name");
@@ -34,8 +34,27 @@ const description = document.querySelector(".description");
 const leftButton = document.querySelector(".left-arrow");
 const rightButton = document.querySelector(".right-arrow");
 
-leftButton.addEventListener("click", slider);
-rightButton.addEventListener("click", slider);
+const counterCounter = document.getElementById("counter");
+counterCounter.innerHTML = slideCounter;
+
+leftButton.addEventListener("click", sliderRotation);
+rightButton.addEventListener("click", sliderRotation);
+
+// initial setup
+picture.src =
+  "http://127.0.0.1:5500/Simple-Js-Project/ReviewCarousel/assets/" +
+  reviews[0].picture;
+personName.innerHTML = reviews[0].name;
+position.innerHTML = reviews[0].position;
+description.innerHTML = reviews[0].description;
+
+// slider changing logic
+
+function sliderRotation() {
+  slider(String(slideCounter));
+  slideCounter++;
+  counterCounter.innerHTML = slideCounter;
+}
 
 function slider(slide) {
   switch (slide) {

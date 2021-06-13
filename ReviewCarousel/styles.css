@@ -21,6 +21,7 @@ body {
   box-shadow: 1px 5px 14px 0px rgba(184, 184, 184, 0.75);
   -webkit-box-shadow: 1px 5px 14px 0px rgba(184, 184, 184, 0.75);
   -moz-box-shadow: 1px 5px 14px 0px rgba(184, 184, 184, 0.75);
+  width: 40%;
 }
 
 .picture {
@@ -109,4 +110,8 @@ body {
 }
 .right-arrow:hover {
   color: rgb(199, 199, 199);
+}
+
+#counter {
+  font-size: 3rem;
 }
