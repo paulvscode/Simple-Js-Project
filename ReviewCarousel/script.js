@@ -37,8 +37,8 @@ const rightButton = document.querySelector(".right-arrow");
 const counterCounter = document.getElementById("counter");
 counterCounter.innerHTML = slideCounter;
 
-leftButton.addEventListener("click", sliderRotation);
-rightButton.addEventListener("click", sliderRotation);
+leftButton.addEventListener("click", sliderRotationLeft);
+rightButton.addEventListener("click", sliderRotationRight);
 
 // initial setup
 picture.src =
@@ -50,9 +50,27 @@ description.innerHTML = reviews[0].description;
 
 // slider changing logic
 
-function sliderRotation() {
+function sliderRotationLeft() {
+  if (slideCounter < 2) {
+    slideCounter = 3;
+    slider(String(slideCounter));
+    counterCounter.innerHTML = slideCounter;
+    return;
+  }
+  slideCounter--;
   slider(String(slideCounter));
+  counterCounter.innerHTML = slideCounter;
+}
+
+function sliderRotationRight() {
+  if (slideCounter > 2) {
+    slideCounter = 1;
+    slider(String(slideCounter));
+    counterCounter.innerHTML = slideCounter;
+    return;
+  }
   slideCounter++;
+  slider(String(slideCounter));
   counterCounter.innerHTML = slideCounter;
 }
 
@@ -75,7 +93,8 @@ function slider(slide) {
       description.innerHTML = reviews[1].description;
       break;
     case "3":
-      "http://127.0.0.1:5500/Simple-Js-Project/ReviewCarousel/assets/" +
+      picture.src =
+        "http://127.0.0.1:5500/Simple-Js-Project/ReviewCarousel/assets/" +
         reviews[2].picture;
       personName.innerHTML = reviews[2].name;
       position.innerHTML = reviews[2].position;
